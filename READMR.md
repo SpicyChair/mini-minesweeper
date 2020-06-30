@@ -1,3 +1,0 @@
-# Mini Minesweeper
-
-Test
