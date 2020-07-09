@@ -18,17 +18,23 @@ public class UserInterface {
         while (true) {
             this.field.printField();
             System.out.println("Set/delete mines marks (x and y coordinates): ");
-            int x = this.scanner.nextInt();
-            int y = this.scanner.nextInt();
+            try {
+                
+                int x = this.scanner.nextInt();
+                int y = this.scanner.nextInt();
 
-            int result = this.field.mark(x, y); //mark mine and get result
-            if (result == 1) {
-                this.field.printField(); 
-                System.out.println("Congratulations! You found all mines!");
-                break;
-            } else if (result == -1) {
-                System.out.println("There is a number here!");
-            }
+                int result = this.field.mark(x, y); //mark mine and get result
+                if (result == 1) {
+                    this.field.printField(); 
+                    System.out.println("Congratulations! You found all mines!");
+                    break;
+                } else if (result == -1) {
+                    System.out.println("There is a number here!");
+                }
+                
+            } catch (Exception e) {
+                System.out.println("Please enter correct input");
+            }    
         }
     }
 }
